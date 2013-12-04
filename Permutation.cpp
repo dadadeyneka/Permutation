@@ -1,3 +1,7 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
 class Permutation
 {
     protected:
@@ -9,13 +13,12 @@ class Permutation
         long PermutationCode;
     public:
         Permutation();
-        Permutation ( long new Permutation Code);
-        Permutation (char*Permutation string);
-        Permutation ( char* indices, long n);
+        Permutation ( long newPermutationCode);
+        Permutation (char*newPermutationString);
+        Permutation ( char*newIndices, long newN);
         ~Permutation();
-
-        Void codeToIndices();
-        void indicesToCode():
+        void codeToIndices();
+        void indicesToCode();
         void stringToIndices();
         long getPermutationCode();
         void setPermutationCode(long newCode);
@@ -24,3 +27,71 @@ class Permutation
         void setIndices (char* newIndices);
 };
 
+        Permutation::Permutation (long newPermutationCode)
+{
+        PermutationCode=newPermutationCode;      
+}
+
+        Permutation::Permutation (char*newPermutationString)
+{
+         int len=strlen(newPermutationString);
+         newPermutationString=new char [len+1];
+         strncpy(PermutationString,newPermutationString,len);
+         PermutationString[len+1]=0;        
+}
+Permutation::Permutation (char*newIndices,long newN)
+{
+          for (int i=1;i<newN;i++)
+       { 
+          char*indices=newIndices;   
+       }     
+}
+Permutation::~Permutation()
+{
+
+}
+
+long Permutation::getPermutationCode()
+{
+     return PermutationCode();
+     }
+     void Permutation::setPermutationCode(long newPermutationCode)
+     {
+     PermutationCode=newPermutationCode;
+     }
+char*Permutation::getPermutationString();
+{
+char*copyPermutationString;
+int len=strlen(PermutationString);
+copyPermutationString=new char[len+1];
+strncpy(copyPermutationString,PermutationString,len);
+copyPermutationString[len]=0;
+return copyPermutationString;
+}
+void Permutation::setPermutationStrig(char* newPermutationStrig)
+{
+if(PermutationString) delete[]PermutationString;
+int len=strlen(newPermutationString);
+PermutationString=new char[len+1];
+strncpy(PermutationString,newPermutationString,len);
+PermutationString[len]=0;    
+}
+char * getIndices();
+{
+char*copyIndices;
+int len=strlen(Indices);
+copyIndices=new char[len+1];
+strncpy(copyIndices,Indices,len);
+copyIndices[len]=0;
+return copyIndices;
+}
+void setIndices (char* newIndices);
+{
+if(Indices) delete[]Indices;
+int len=strlen(newIndices);
+Indices=new char[len+1];
+strncpy(Indices,newIndices,len);
+Indices[len]=0;    
+}
+int main(int argc, char *argv[])
+{
